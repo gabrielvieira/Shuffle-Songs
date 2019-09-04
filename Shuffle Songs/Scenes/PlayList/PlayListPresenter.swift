@@ -13,6 +13,6 @@ protocol PlayListPresenterProtocol {
 
 class PlayListPresenter: PlayListPresenterProtocol {
     
-    weak var viewController: PlayListDisplayLogic?
+    weak var viewController: PlayListDisplayProtocol?
 
 }

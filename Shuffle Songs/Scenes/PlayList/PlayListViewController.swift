@@ -13,11 +13,11 @@ protocol PlayListDisplayProtocol: class {
 
 class PlayListViewController: BaseViewController, PlayListDisplayProtocol {
 
-    var interactor: PlayListBusinessLogic?
+    var interactor: PlayListInteractorProtocol?
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
+//        setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
