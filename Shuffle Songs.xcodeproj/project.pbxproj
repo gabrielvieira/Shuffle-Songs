@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B0987BC231F7B9300F31C70 /* PlayListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0987BB231F7B9300F31C70 /* PlayListViewModel.swift */; };
+		5B0987BE231F7C9B00F31C70 /* PlayListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0987BD231F7C9B00F31C70 /* PlayListModel.swift */; };
 		5B661CCA231F64E20039DC19 /* PlayListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CC4231F64E20039DC19 /* PlayListPresenter.swift */; };
 		5B661CCB231F64E20039DC19 /* PlayListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CC5231F64E20039DC19 /* PlayListWorker.swift */; };
 		5B661CCE231F64E20039DC19 /* PlayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CC8231F64E20039DC19 /* PlayListViewController.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		5B0987BB231F7B9300F31C70 /* PlayListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListViewModel.swift; sourceTree = "<group>"; };
+		5B0987BD231F7C9B00F31C70 /* PlayListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListModel.swift; sourceTree = "<group>"; };
 		5B661CC4231F64E20039DC19 /* PlayListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListPresenter.swift; sourceTree = "<group>"; };
 		5B661CC5231F64E20039DC19 /* PlayListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListWorker.swift; sourceTree = "<group>"; };
 		5B661CC8231F64E20039DC19 /* PlayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				5B661CC8231F64E20039DC19 /* PlayListViewController.swift */,
 				5B661CC9231F64E20039DC19 /* PlayListInteractor.swift */,
 				5B0987BB231F7B9300F31C70 /* PlayListViewModel.swift */,
+				5B0987BD231F7C9B00F31C70 /* PlayListModel.swift */,
 			);
 			path = PlayList;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				5B661CF3231F75940039DC19 /* ImageCacher.swift in Sources */,
 				5B661CD5231F66920039DC19 /* ColorConstants.swift in Sources */,
 				5B0987BC231F7B9300F31C70 /* PlayListViewModel.swift in Sources */,
+				5B0987BE231F7C9B00F31C70 /* PlayListModel.swift in Sources */,
 				5B661CDF231F697F0039DC19 /* BaseViewController.swift in Sources */,
 				5B661CEB231F720B0039DC19 /* APIRequestProtocol.swift in Sources */,
 				5B661CCA231F64E20039DC19 /* PlayListPresenter.swift in Sources */,
