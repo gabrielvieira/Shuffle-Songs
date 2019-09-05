@@ -9,14 +9,15 @@
 import Foundation
 
 protocol APIRequestProtocol {
-    
+
     var endpoint: String { get }
     var method: HTTPMethod { get }
     var parameters: [String : Any] { get }
     var headers: [String : String] { get }
+    func getUrlRequest() -> URLRequest?
 }
 
-//default values for header and body is empty
+//default values for headers and body is empty
 extension APIRequestProtocol {
     
     var headers: [String : String] {

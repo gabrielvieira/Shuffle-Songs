@@ -8,7 +8,8 @@
 import UIKit
 
 protocol PlayListDisplayProtocol: class {
-    
+    func displayPlaylist (viewModel: PlayListViewModel)
+    func displayError(message: String)
 }
 
 class PlayListViewController: BaseViewController, PlayListDisplayProtocol {
@@ -17,7 +18,6 @@ class PlayListViewController: BaseViewController, PlayListDisplayProtocol {
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//        setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -26,5 +26,14 @@ class PlayListViewController: BaseViewController, PlayListDisplayProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func displayPlaylist (viewModel: PlayListViewModel) {
+        
+    }
+    
+    func displayError(message: String) {
+        let alert = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: message, preferredStyle: .alert)
+        self.present(alert, animated: true)
     }
 }

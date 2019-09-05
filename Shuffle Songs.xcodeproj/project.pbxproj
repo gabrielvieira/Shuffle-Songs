@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B0987BC231F7B9300F31C70 /* PlayListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0987BB231F7B9300F31C70 /* PlayListViewModel.swift */; };
 		5B0987BE231F7C9B00F31C70 /* PlayListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0987BD231F7C9B00F31C70 /* PlayListModel.swift */; };
+		5B4381D02320B8BF00C039E5 /* PlayListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4381CF2320B8BF00C039E5 /* PlayListRequest.swift */; };
 		5B661CCA231F64E20039DC19 /* PlayListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CC4231F64E20039DC19 /* PlayListPresenter.swift */; };
 		5B661CCB231F64E20039DC19 /* PlayListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CC5231F64E20039DC19 /* PlayListWorker.swift */; };
 		5B661CCE231F64E20039DC19 /* PlayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CC8231F64E20039DC19 /* PlayListViewController.swift */; };
@@ -31,6 +32,8 @@
 		5BABAF0F231F5DD900E7C116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BABAF0D231F5DD900E7C116 /* LaunchScreen.storyboard */; };
 		5BABAF1A231F5DD900E7C116 /* Shuffle_SongsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABAF19231F5DD900E7C116 /* Shuffle_SongsTests.swift */; };
 		5BABAF25231F5DD900E7C116 /* Shuffle_SongsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABAF24231F5DD900E7C116 /* Shuffle_SongsUITests.swift */; };
+		5BF501D72320BB7D00D1C9EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BF501D92320BB7D00D1C9EB /* Localizable.strings */; };
+		5BF501DC2320C17900D1C9EB /* APIUrlRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF501DB2320C17900D1C9EB /* APIUrlRequestBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 /* Begin PBXFileReference section */
 		5B0987BB231F7B9300F31C70 /* PlayListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListViewModel.swift; sourceTree = "<group>"; };
 		5B0987BD231F7C9B00F31C70 /* PlayListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListModel.swift; sourceTree = "<group>"; };
+		5B4381CF2320B8BF00C039E5 /* PlayListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListRequest.swift; sourceTree = "<group>"; };
 		5B661CC4231F64E20039DC19 /* PlayListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListPresenter.swift; sourceTree = "<group>"; };
 		5B661CC5231F64E20039DC19 /* PlayListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListWorker.swift; sourceTree = "<group>"; };
 		5B661CC8231F64E20039DC19 /* PlayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,9 @@
 		5BABAF20231F5DD900E7C116 /* Shuffle SongsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shuffle SongsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BABAF24231F5DD900E7C116 /* Shuffle_SongsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle_SongsUITests.swift; sourceTree = "<group>"; };
 		5BABAF26231F5DD900E7C116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BF501D82320BB7D00D1C9EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5BF501DA2320BBC400D1C9EB /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5BF501DB2320C17900D1C9EB /* APIUrlRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrlRequestBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +115,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5B0987B9231F7B5200F31C70 /* Models */ = {
+		5B4381CE2320B89E00C039E5 /* Worker */ = {
 			isa = PBXGroup;
 			children = (
+				5B661CC5231F64E20039DC19 /* PlayListWorker.swift */,
+				5B4381CF2320B8BF00C039E5 /* PlayListRequest.swift */,
 			);
-			path = Models;
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		5B661CC3231F64930039DC19 /* Scenes */ = {
@@ -126,11 +135,11 @@
 		5B661CD0231F65250039DC19 /* PlayList */ = {
 			isa = PBXGroup;
 			children = (
+				5BF501D42320BA1100D1C9EB /* ViewModel */,
+				5BF501D32320B9D600D1C9EB /* View */,
+				5B4381CE2320B89E00C039E5 /* Worker */,
 				5B661CC4231F64E20039DC19 /* PlayListPresenter.swift */,
-				5B661CC5231F64E20039DC19 /* PlayListWorker.swift */,
-				5B661CC8231F64E20039DC19 /* PlayListViewController.swift */,
 				5B661CC9231F64E20039DC19 /* PlayListInteractor.swift */,
-				5B0987BB231F7B9300F31C70 /* PlayListViewModel.swift */,
 				5B0987BD231F7C9B00F31C70 /* PlayListModel.swift */,
 			);
 			path = PlayList;
@@ -187,6 +196,7 @@
 				5BABAF04231F5DD800E7C116 /* AppDelegate.swift */,
 				5BABAF0D231F5DD900E7C116 /* LaunchScreen.storyboard */,
 				5BABAF10231F5DD900E7C116 /* Info.plist */,
+				5BF501D92320BB7D00D1C9EB /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -202,12 +212,12 @@
 		5B661CEE231F75390039DC19 /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				5B0987B9231F7B5200F31C70 /* Models */,
 				5B661CE4231F71210039DC19 /* APIClient.swift */,
 				5B661CE6231F715E0039DC19 /* APIResult.swift */,
 				5B661CE8231F71870039DC19 /* APIClientError.swift */,
 				5B661CEA231F720B0039DC19 /* APIRequestProtocol.swift */,
 				5B661CEC231F73550039DC19 /* HTTPMethod.swift */,
+				5BF501DB2320C17900D1C9EB /* APIUrlRequestBuilder.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -270,6 +280,22 @@
 				5BABAF26231F5DD900E7C116 /* Info.plist */,
 			);
 			path = "Shuffle SongsUITests";
+			sourceTree = "<group>";
+		};
+		5BF501D32320B9D600D1C9EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B661CC8231F64E20039DC19 /* PlayListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5BF501D42320BA1100D1C9EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B0987BB231F7B9300F31C70 /* PlayListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +384,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pt,
 			);
 			mainGroup = 5BABAEF8231F5DD800E7C116;
 			productRefGroup = 5BABAF02231F5DD800E7C116 /* Products */;
@@ -377,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BABAF0F231F5DD900E7C116 /* LaunchScreen.storyboard in Resources */,
+				5BF501D72320BB7D00D1C9EB /* Localizable.strings in Resources */,
 				5BABAF0C231F5DD900E7C116 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,9 +444,11 @@
 				5B661CEB231F720B0039DC19 /* APIRequestProtocol.swift in Sources */,
 				5B661CCA231F64E20039DC19 /* PlayListPresenter.swift in Sources */,
 				5B661CE5231F71210039DC19 /* APIClient.swift in Sources */,
+				5BF501DC2320C17900D1C9EB /* APIUrlRequestBuilder.swift in Sources */,
 				5B661CED231F73550039DC19 /* HTTPMethod.swift in Sources */,
 				5BABAF07231F5DD800E7C116 /* ViewController.swift in Sources */,
 				5BABAF05231F5DD800E7C116 /* AppDelegate.swift in Sources */,
+				5B4381D02320B8BF00C039E5 /* PlayListRequest.swift in Sources */,
 				5B661CE9231F71870039DC19 /* APIClientError.swift in Sources */,
 				5B661CF1231F75650039DC19 /* ImageDownloader.swift in Sources */,
 				5B661CCB231F64E20039DC19 /* PlayListWorker.swift in Sources */,
@@ -465,6 +495,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		5BF501D92320BB7D00D1C9EB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BF501D82320BB7D00D1C9EB /* en */,
+				5BF501DA2320BBC400D1C9EB /* pt */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -472,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -533,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

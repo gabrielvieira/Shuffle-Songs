@@ -8,7 +8,8 @@
 import UIKit
 
 protocol PlayListInteractorProtocol {
-
+    func fetchPlaylist()
+    func shufflePlaylist()
 }
 
 class PlayListInteractor: PlayListInteractorProtocol {
@@ -16,12 +17,11 @@ class PlayListInteractor: PlayListInteractorProtocol {
     var presenter: PlayListPresenterProtocol?
     var worker: PlayListWorker?
     
-//    func doSomething(request: PlayList.Something.Request) {
-//
-//        worker = PlayListWorker()
-//        worker?.doSomeWork()
-//
-//        let response = PlayList.Something.Response()
-//        presenter?.presentSomething(response: response)
-//    }
+    func fetchPlaylist() {
+        
+    }
+    
+    func shufflePlaylist() {
+    
+    }
 }

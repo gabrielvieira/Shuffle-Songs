@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Shuffle Songs
+
+  Created by Gabriel Tomaz on 05/09/19.
+  Copyright © 2019 Gabriel Tomaz. All rights reserved.
+*/
+
+"alert" = "Alerta";
+"ok" = "OK";

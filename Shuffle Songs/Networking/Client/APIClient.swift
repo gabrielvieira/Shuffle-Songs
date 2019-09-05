@@ -9,14 +9,14 @@
 import Foundation
 
 protocol APIClientProtocol {
-    func request<T:Decodable>(_ request: APIRequestProtocol, completion: @escaping (APIResult<T>) -> Void)
+    func request<T:Decodable>(_ request: URLRequest?, completion: @escaping (APIResult<T>) -> Void)
 }
 
 class APIClient: APIClientProtocol {
     
-    public func request<T:Decodable>(_ request: APIRequestProtocol, completion: @escaping (APIResult<T>) -> Void) {
+    public func request<T:Decodable>(_ request: URLRequest?, completion: @escaping (APIResult<T>) -> Void) {
         
-        guard let urlRequest = self.buildURLRequest(request) else {
+        guard let urlRequest = request else {
             completion(.failure(.buildRequestError))
             return
         }
@@ -60,34 +60,6 @@ class APIClient: APIClientProtocol {
             default: break
             }
             
-            }.resume()
-    }
-    
-    private func buildURLRequest(_ request: APIRequestProtocol) -> URLRequest? {
-        
-        guard let url = URL(string: "\(APIConstants.BaseUrl)\(request.endpoint)") else {
-            return nil
-        }
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = request.method.rawValue
-        
-        if request.method == .post {
-            
-            do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: request.parameters, options: .prettyPrinted)
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }
-        
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        for (key, value) in request.headers {
-            urlRequest.addValue(value, forHTTPHeaderField: key)
-        }
-        
-        return urlRequest
+        }.resume()
     }
 }
