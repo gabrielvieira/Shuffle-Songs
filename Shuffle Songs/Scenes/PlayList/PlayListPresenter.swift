@@ -8,7 +8,8 @@
 import UIKit
 
 protocol PlayListPresenterProtocol {
-    
+    func presentPlaylist()
+    func presentError()
 }
 
 class PlayListPresenter: PlayListPresenterProtocol {

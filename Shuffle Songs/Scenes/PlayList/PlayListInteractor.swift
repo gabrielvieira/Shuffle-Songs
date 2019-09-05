@@ -19,6 +19,18 @@ class PlayListInteractor: PlayListInteractorProtocol {
     
     func fetchPlaylist() {
         
+        self.worker?.fetchPlayList(completion: { result in
+            
+            switch result {
+                
+            case let .success(lookupResponse):
+                return
+                
+            case let .failure(error):
+//                self.presenter
+                return
+            }
+        })
     }
     
     func shufflePlaylist() {

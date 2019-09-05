@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PlayListWorkerProtocol {
-    func fetchPlayList(result: @escaping (APIResult<LookupResponse>) -> Void)
+    func fetchPlayList(completion: @escaping (APIResult<LookupResponse>) -> Void)
 }
 
 class PlayListWorker: PlayListWorkerProtocol {
@@ -21,14 +21,20 @@ class PlayListWorker: PlayListWorkerProtocol {
         self.apiClient = apiClient
     }
     
-    func fetchPlayList(result: @escaping (APIResult<LookupResponse>) -> Void) {
+    func fetchPlayList(completion: @escaping (APIResult<LookupResponse>) -> Void) {
     
         let playListRequest = PlayListRequest(ids: self.ids, limit: self.limit)
         
-        self.apiClient.request(playListRequest.getUrlRequest()) { result in
+        self.apiClient.request(playListRequest.getUrlRequest()) { (result: APIResult<LookupResponse>) in
+            
             switch result {
-
                 
+            case let .success(lookupResponse):
+                completion(.success(lookupResponse))
+                return
+                
+            case let .failure(error):
+                completion(.failure(error))
             }
         }
     }
