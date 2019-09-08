@@ -10,4 +10,5 @@ import Foundation
 
 struct PlayListViewModel {
 
+    let trackList: [TrackViewModel]
 }

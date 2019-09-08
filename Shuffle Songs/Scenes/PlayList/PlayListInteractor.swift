@@ -16,6 +16,12 @@ class PlayListInteractor: PlayListInteractorProtocol {
     
     var presenter: PlayListPresenterProtocol?
     var worker: PlayListWorker?
+    private var playlist: PlayList?
+    private let trackShuffler: TrackShufflerProtocol
+    
+    init(trackShuffler: TrackShufflerProtocol = TrackShuffler()) {
+        self.trackShuffler = trackShuffler
+    }
     
     func fetchPlaylist() {
         
@@ -23,17 +29,25 @@ class PlayListInteractor: PlayListInteractorProtocol {
             
             switch result {
                 
-            case let .success(lookupResponse):
-                return
+            case let .success(playlist):
+                self.playlist = playlist
+                self.presenter?.presentPlaylist(playList: playlist)
                 
             case let .failure(error):
-//                self.presenter
-                return
+                self.presenter?.presentError(error: error)
             }
         })
     }
     
     func shufflePlaylist() {
-    
+        
+        guard let currentPlayList = self.playlist else {
+            return
+        }
+        
+        let shuffledPlauList = PlayList(artists: currentPlayList.artists,
+                                        tracks: self.trackShuffler.shufle(tracks: currentPlayList.tracks))
+        
+        self.presenter?.presentPlaylist(playList: shuffledPlauList)
     }
 }

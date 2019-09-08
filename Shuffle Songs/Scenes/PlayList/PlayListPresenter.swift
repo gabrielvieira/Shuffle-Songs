@@ -8,12 +8,19 @@
 import UIKit
 
 protocol PlayListPresenterProtocol {
-    func presentPlaylist()
-    func presentError()
+    func presentPlaylist(playList: PlayList)
+    func presentError(error: Error)
 }
 
 class PlayListPresenter: PlayListPresenterProtocol {
     
     weak var viewController: PlayListDisplayProtocol?
-
+    
+    func presentPlaylist(playList: PlayList) {
+        
+    }
+    
+    func presentError(error: Error) {
+        
+    }
 }

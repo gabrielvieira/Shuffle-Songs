@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="PlayListTableViewCell" customModule="Shuffle_Songs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="367" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="367" height="95.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gzm-qt-f2u">
+                        <rect key="frame" x="16" y="16" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="PL4-At-hcY"/>
+                            <constraint firstAttribute="height" constant="64" id="ocG-as-CeP"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sfV-fH-K6L">
+                        <rect key="frame" x="90" y="27.5" width="267" height="41"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="2hI-PI-8Ix">
+                                <rect key="frame" x="0.0" y="0.0" width="267" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Jka-py-y0S">
+                                <rect key="frame" x="0.0" y="20.5" width="267" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="sfV-fH-K6L" secondAttribute="trailing" constant="10" id="83o-Td-Uia"/>
+                    <constraint firstItem="sfV-fH-K6L" firstAttribute="leading" secondItem="gzm-qt-f2u" secondAttribute="trailing" constant="10" id="NR3-An-Ph7"/>
+                    <constraint firstItem="gzm-qt-f2u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="QEZ-67-y8B"/>
+                    <constraint firstItem="gzm-qt-f2u" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gms-NP-lBk"/>
+                    <constraint firstItem="sfV-fH-K6L" firstAttribute="centerY" secondItem="gzm-qt-f2u" secondAttribute="centerY" id="prC-qQ-KJN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="artWorkImageView" destination="gzm-qt-f2u" id="bQD-iF-c67"/>
+                <outlet property="artistNameLabel" destination="Jka-py-y0S" id="uiJ-bM-Un1"/>
+                <outlet property="trackNameLabel" destination="2hI-PI-8Ix" id="X0V-HM-NFL"/>
+            </connections>
+            <point key="canvasLocation" x="157.24637681159422" y="205.58035714285714"/>
+        </tableViewCell>
+    </objects>
+</document>

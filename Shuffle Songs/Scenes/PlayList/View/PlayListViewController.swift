@@ -12,28 +12,106 @@ protocol PlayListDisplayProtocol: class {
     func displayError(message: String)
 }
 
-class PlayListViewController: BaseViewController, PlayListDisplayProtocol {
+class PlayListViewController: BaseViewController {
 
     var interactor: PlayListInteractorProtocol?
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    private let tableView = UITableView()
+    private var viewModel: PlayListViewModel = PlayListViewModel(trackList: [])
+    private let cellIdentifier = "PlayListTableViewCell"
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupView()
+        interactor?.fetchPlaylist()
+        self.showLoader()
     }
     
-    func displayPlaylist (viewModel: PlayListViewModel) {
+    private func setupView() {
         
+        self.setupConstraints()
+        self.setupTableView()
+        self.setupNavigationBar()
+    }
+    
+    private func setupConstraints() {
+
+        self.view.addSubview(self.tableView)
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        let horizontalConstraint = self.tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor)
+        let verticalConstraint = self.tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+        let widthConstraint = self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor)
+        let heightConstraint = self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        self.view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
+    }
+    
+    private func setupNavigationBar() {
+        
+        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: ImageConstants.shuffleIcon),
+                                                 style: .done,
+                                                 target: self,
+                                                 action: #selector(PlayListViewController.shuffle))
+        
+        rightBarButtonItem.tintColor = ColorConstants.white
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
+        self.navigationItem.title = NSLocalizedString("shuffle_title", comment: "")
+    }
+    
+    @objc func shuffle() {
+        
+        self.interactor?.shufflePlaylist()
+    }
+    
+    private func setupTableView() {
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = ColorConstants.purple
+        self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: self.cellIdentifier, bundle: nil),
+                           forCellReuseIdentifier: self.cellIdentifier)
+        tableView.tableFooterView = UIView()
+        tableView.backgroundView = backgroundView
+    }
+}
+
+extension PlayListViewController: PlayListDisplayProtocol {
+    
+    func displayPlaylist (viewModel: PlayListViewModel) {
+        //display items
     }
     
     func displayError(message: String) {
         let alert = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: message, preferredStyle: .alert)
         self.present(alert, animated: true)
+    }
+}
+
+extension PlayListViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? PlayListTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        let cellViewModel = self.viewModel.trackList[indexPath.row]
+        cell.setup(cellViewModel)
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.viewModel.trackList.count
     }
 }

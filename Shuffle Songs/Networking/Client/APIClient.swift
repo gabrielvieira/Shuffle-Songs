@@ -9,31 +9,31 @@
 import Foundation
 
 protocol APIClientProtocol {
-    func request<T:Decodable>(_ request: URLRequest?, completion: @escaping (APIResult<T>) -> Void)
+    func request<T:Decodable>(_ request: URLRequest?, completion: @escaping (Result<T>) -> Void)
 }
 
 class APIClient: APIClientProtocol {
     
-    public func request<T:Decodable>(_ request: URLRequest?, completion: @escaping (APIResult<T>) -> Void) {
+    public func request<T:Decodable>(_ request: URLRequest?, completion: @escaping (Result<T>) -> Void) {
         
         guard let urlRequest = request else {
-            completion(.failure(.buildRequestError))
+            completion(.failure(APIClientError.buildRequestError))
             return
         }
         
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             
             if let error = error {
-                completion(.failure(.unknown(error.localizedDescription)))
+                completion(.failure(APIClientError.unknown(error.localizedDescription)))
             }
             
             guard let data = data else {
-                completion(.failure(.brokenData))
+                completion(.failure(APIClientError.brokenData))
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(.unknown("Could not cast to HTTPURLResponse object.")))
+                completion(.failure(APIClientError.unknown("Could not cast to HTTPURLResponse object.")))
                 return
             }
             
@@ -42,20 +42,20 @@ class APIClient: APIClientProtocol {
             case 200...299:
                 
                 guard let obj = try? JSONDecoder().decode(T.self, from: data) else {
-                    completion(.failure(.couldNotParseObject))
+                    completion(.failure(APIClientError.couldNotParseObject))
                     return
                 }
                 
                 completion(.success(obj))
                 
             case 403:
-                completion(.failure(.authenticationRequired))
+                completion(.failure(APIClientError.authenticationRequired))
                 
             case 404:
-                completion(.failure(.couldNotFindHost))
+                completion(.failure(APIClientError.couldNotFindHost))
                 
             case 500:
-                completion(.failure(.badRequest))
+                completion(.failure(APIClientError.badRequest))
                 
             default: break
             }

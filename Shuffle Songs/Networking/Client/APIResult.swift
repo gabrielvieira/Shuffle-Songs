@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum APIResult<T:Decodable> {
+enum Result<T> {
     case success(T)
-    case failure(APIClientError)
+    case failure(Error)
 }

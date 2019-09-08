@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PlayListWorkerProtocol {
-    func fetchPlayList(completion: @escaping (APIResult<LookupResponse>) -> Void)
+    func fetchPlayList(completion: @escaping (Result<PlayList>) -> Void)
 }
 
 class PlayListWorker: PlayListWorkerProtocol {
@@ -21,21 +21,39 @@ class PlayListWorker: PlayListWorkerProtocol {
         self.apiClient = apiClient
     }
     
-    func fetchPlayList(completion: @escaping (APIResult<LookupResponse>) -> Void) {
+    func fetchPlayList(completion: @escaping (Result<PlayList>) -> Void) {
     
         let playListRequest = PlayListRequest(ids: self.ids, limit: self.limit)
         
-        self.apiClient.request(playListRequest.getUrlRequest()) { (result: APIResult<LookupResponse>) in
+        self.apiClient.request(playListRequest.getUrlRequest()) { (result: Result<LookupResponse>) in
             
             switch result {
                 
             case let .success(lookupResponse):
-                completion(.success(lookupResponse))
-                return
+                
+                completion(.success(self.createPlayList(result: lookupResponse.result)))
                 
             case let .failure(error):
                 completion(.failure(error))
             }
         }
+    }
+    
+    func createPlayList(result: [LookUp]) -> PlayList {
+        
+        var artistList: [Artist] = []
+        var trackList: [Track] = []
+
+        for item in result {
+            
+            switch item {
+                
+            case .artist(let artist):
+                artistList.append(artist)
+            case .track(let track):
+                trackList.append(track)
+            }
+        }
+        return PlayList(artists: artistList, tracks: trackList)
     }
 }
