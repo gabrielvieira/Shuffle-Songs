@@ -1,15 +1,14 @@
 //
-//  Shuffle_SongsTests.swift
+//  PlayListInteractorTests.swift
 //  Shuffle SongsTests
 //
-//  Created by Gabriel Tomaz on 03/09/19.
+//  Created by Gabriel Tomaz on 08/09/19.
 //  Copyright © 2019 Gabriel Tomaz. All rights reserved.
 //
 
 import XCTest
-@testable import Shuffle_Songs
 
-class Shuffle_SongsTests: XCTestCase {
+class PlayListInteractorTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

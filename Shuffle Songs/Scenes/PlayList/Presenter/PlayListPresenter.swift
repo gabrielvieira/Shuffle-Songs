@@ -18,9 +18,18 @@ class PlayListPresenter: PlayListPresenterProtocol {
     
     func presentPlaylist(playList: PlayList) {
         
+        let viewModel =  PlayListViewModel(trackList:
+            playList.tracks.compactMap {
+                return TrackViewModel(name: $0.name,
+                                      artistName: "\($0.artistName) (\($0.primaryGenreName))",
+                                      artwork: $0.artwork)
+            }
+        )
+        
+        self.viewController?.displayPlaylist(viewModel: viewModel)
     }
     
     func presentError(error: Error) {
-        
+        self.viewController?.displayError(message: error.localizedDescription)
     }
 }

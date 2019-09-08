@@ -40,7 +40,7 @@ class PlayListWorker: PlayListWorkerProtocol {
     }
     
     func createPlayList(result: [LookUp]) -> PlayList {
-        
+
         var artistList: [Artist] = []
         var trackList: [Track] = []
 

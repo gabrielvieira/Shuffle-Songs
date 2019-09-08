@@ -9,13 +9,13 @@
 import UIKit
 
 class ImageCacher {
+    
     private let cache: NSCache<NSString, UIImage>
+    static let shared = ImageCacher()
     
     private init() {
         cache = NSCache<NSString, UIImage>()
     }
-    
-    static let shared = ImageCacher()
     
     func loadImage(for key: NSString) -> UIImage? {
         return cache.object(forKey: key)

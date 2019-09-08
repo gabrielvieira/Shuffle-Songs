@@ -17,6 +17,15 @@
 		5B27D5E623258E9800BAAAE6 /* LookUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D5E523258E9800BAAAE6 /* LookUp.swift */; };
 		5B27D5E823258F5300BAAAE6 /* PlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D5E723258F5300BAAAE6 /* PlayList.swift */; };
 		5B27D5EA2325A33000BAAAE6 /* TrackShuffler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D5E92325A33000BAAAE6 /* TrackShuffler.swift */; };
+		5B27D5EF2325AC0C00BAAAE6 /* TrackShuflerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D5EE2325AC0C00BAAAE6 /* TrackShuflerTests.swift */; };
+		5B27D5F32325AC6A00BAAAE6 /* LookupMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D5F22325AC6A00BAAAE6 /* LookupMock.json */; };
+		5B27D5F52325ACC500BAAAE6 /* LookupMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D5F42325ACC500BAAAE6 /* LookupMock.swift */; };
+		5B27D5F82325B54200BAAAE6 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D5F72325B54200BAAAE6 /* UIImage+Extensions.swift */; };
+		5B27D5FA2325B55300BAAAE6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D5F92325B55300BAAAE6 /* String+Extensions.swift */; };
+		5B27D5FE2325C09100BAAAE6 /* PlayListWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D5FD2325C09100BAAAE6 /* PlayListWorkerTests.swift */; };
+		5B27D6002325C10300BAAAE6 /* PlayListPresentetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D5FF2325C10300BAAAE6 /* PlayListPresentetTests.swift */; };
+		5B27D6022325C11100BAAAE6 /* PlayListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D6012325C11100BAAAE6 /* PlayListInteractorTests.swift */; };
+		5B27D6042325C12300BAAAE6 /* PlayListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D6032325C12300BAAAE6 /* PlayListViewControllerTests.swift */; };
 		5B4381D02320B8BF00C039E5 /* PlayListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4381CF2320B8BF00C039E5 /* PlayListRequest.swift */; };
 		5B661CCA231F64E20039DC19 /* PlayListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CC4231F64E20039DC19 /* PlayListPresenter.swift */; };
 		5B661CCB231F64E20039DC19 /* PlayListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CC5231F64E20039DC19 /* PlayListWorker.swift */; };
@@ -26,7 +35,7 @@
 		5B661CD5231F66920039DC19 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CD4231F66920039DC19 /* ColorConstants.swift */; };
 		5B661CD9231F68B60039DC19 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CD8231F68B60039DC19 /* APIConstants.swift */; };
 		5B661CDF231F697F0039DC19 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CDE231F697F0039DC19 /* BaseViewController.swift */; };
-		5B661CE3231F70570039DC19 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CE2231F70570039DC19 /* Router.swift */; };
+		5B661CE3231F70570039DC19 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CE2231F70570039DC19 /* Coordinator.swift */; };
 		5B661CE5231F71210039DC19 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CE4231F71210039DC19 /* APIClient.swift */; };
 		5B661CE7231F715E0039DC19 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CE6231F715E0039DC19 /* APIResult.swift */; };
 		5B661CE9231F71870039DC19 /* APIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CE8231F71870039DC19 /* APIClientError.swift */; };
@@ -38,7 +47,6 @@
 		5BABAF07231F5DD800E7C116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABAF06231F5DD800E7C116 /* ViewController.swift */; };
 		5BABAF0C231F5DD900E7C116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BABAF0B231F5DD900E7C116 /* Assets.xcassets */; };
 		5BABAF0F231F5DD900E7C116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BABAF0D231F5DD900E7C116 /* LaunchScreen.storyboard */; };
-		5BABAF1A231F5DD900E7C116 /* Shuffle_SongsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABAF19231F5DD900E7C116 /* Shuffle_SongsTests.swift */; };
 		5BABAF25231F5DD900E7C116 /* Shuffle_SongsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABAF24231F5DD900E7C116 /* Shuffle_SongsUITests.swift */; };
 		5BF501D72320BB7D00D1C9EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BF501D92320BB7D00D1C9EB /* Localizable.strings */; };
 		5BF501DC2320C17900D1C9EB /* APIUrlRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF501DB2320C17900D1C9EB /* APIUrlRequestBuilder.swift */; };
@@ -72,6 +80,15 @@
 		5B27D5E523258E9800BAAAE6 /* LookUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUp.swift; sourceTree = "<group>"; };
 		5B27D5E723258F5300BAAAE6 /* PlayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayList.swift; sourceTree = "<group>"; };
 		5B27D5E92325A33000BAAAE6 /* TrackShuffler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackShuffler.swift; sourceTree = "<group>"; };
+		5B27D5EE2325AC0C00BAAAE6 /* TrackShuflerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackShuflerTests.swift; sourceTree = "<group>"; };
+		5B27D5F22325AC6A00BAAAE6 /* LookupMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LookupMock.json; sourceTree = "<group>"; };
+		5B27D5F42325ACC500BAAAE6 /* LookupMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupMock.swift; sourceTree = "<group>"; };
+		5B27D5F72325B54200BAAAE6 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		5B27D5F92325B55300BAAAE6 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		5B27D5FD2325C09100BAAAE6 /* PlayListWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListWorkerTests.swift; sourceTree = "<group>"; };
+		5B27D5FF2325C10300BAAAE6 /* PlayListPresentetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListPresentetTests.swift; sourceTree = "<group>"; };
+		5B27D6012325C11100BAAAE6 /* PlayListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListInteractorTests.swift; sourceTree = "<group>"; };
+		5B27D6032325C12300BAAAE6 /* PlayListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListViewControllerTests.swift; sourceTree = "<group>"; };
 		5B4381CF2320B8BF00C039E5 /* PlayListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListRequest.swift; sourceTree = "<group>"; };
 		5B661CC4231F64E20039DC19 /* PlayListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListPresenter.swift; sourceTree = "<group>"; };
 		5B661CC5231F64E20039DC19 /* PlayListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListWorker.swift; sourceTree = "<group>"; };
@@ -81,7 +98,7 @@
 		5B661CD4231F66920039DC19 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		5B661CD8231F68B60039DC19 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		5B661CDE231F697F0039DC19 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		5B661CE2231F70570039DC19 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		5B661CE2231F70570039DC19 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5B661CE4231F71210039DC19 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5B661CE6231F715E0039DC19 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		5B661CE8231F71870039DC19 /* APIClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientError.swift; sourceTree = "<group>"; };
@@ -96,7 +113,6 @@
 		5BABAF0E231F5DD900E7C116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BABAF10231F5DD900E7C116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BABAF15231F5DD900E7C116 /* Shuffle SongsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shuffle SongsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BABAF19231F5DD900E7C116 /* Shuffle_SongsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle_SongsTests.swift; sourceTree = "<group>"; };
 		5BABAF1B231F5DD900E7C116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BABAF20231F5DD900E7C116 /* Shuffle SongsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shuffle SongsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BABAF24231F5DD900E7C116 /* Shuffle_SongsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle_SongsUITests.swift; sourceTree = "<group>"; };
@@ -151,6 +167,47 @@
 			path = TrackShuffler;
 			sourceTree = "<group>";
 		};
+		5B27D5F02325AC1600BAAAE6 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				5B27D5F42325ACC500BAAAE6 /* LookupMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		5B27D5F12325AC2300BAAAE6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5B27D5F22325AC6A00BAAAE6 /* LookupMock.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5B27D5F62325B50600BAAAE6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B27D5F72325B54200BAAAE6 /* UIImage+Extensions.swift */,
+				5B27D5F92325B55300BAAAE6 /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5B27D5FB2325BD0200BAAAE6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5B661CC4231F64E20039DC19 /* PlayListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5B27D5FC2325BD0900BAAAE6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5B661CC9231F64E20039DC19 /* PlayListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		5B4381CE2320B89E00C039E5 /* Worker */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,11 +229,11 @@
 		5B661CD0231F65250039DC19 /* PlayList */ = {
 			isa = PBXGroup;
 			children = (
+				5B27D5FC2325BD0900BAAAE6 /* Interactor */,
+				5B27D5FB2325BD0200BAAAE6 /* Presenter */,
 				5BF501D42320BA1100D1C9EB /* ViewModel */,
 				5BF501D32320B9D600D1C9EB /* View */,
 				5B4381CE2320B89E00C039E5 /* Worker */,
-				5B661CC4231F64E20039DC19 /* PlayListPresenter.swift */,
-				5B661CC9231F64E20039DC19 /* PlayListInteractor.swift */,
 			);
 			path = PlayList;
 			sourceTree = "<group>";
@@ -200,20 +257,21 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		5B661CD7231F683A0039DC19 /* Router */ = {
+		5B661CD7231F683A0039DC19 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				5B661CE2231F70570039DC19 /* Router.swift */,
+				5B661CE2231F70570039DC19 /* Coordinator.swift */,
 			);
-			path = Router;
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		5B661CDA231F69280039DC19 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5B27D5F62325B50600BAAAE6 /* Extensions */,
 				5B27D5EB2325A73B00BAAAE6 /* TrackShuffler */,
 				5B661CDB231F69530039DC19 /* Controller */,
-				5B661CD7231F683A0039DC19 /* Router */,
+				5B661CD7231F683A0039DC19 /* Coordinator */,
 				5B661CD1231F65370039DC19 /* Constants */,
 			);
 			path = Common;
@@ -304,8 +362,14 @@
 		5BABAF18231F5DD900E7C116 /* Shuffle SongsTests */ = {
 			isa = PBXGroup;
 			children = (
-				5BABAF19231F5DD900E7C116 /* Shuffle_SongsTests.swift */,
+				5B27D5F12325AC2300BAAAE6 /* Resources */,
+				5B27D5F02325AC1600BAAAE6 /* Mock */,
 				5BABAF1B231F5DD900E7C116 /* Info.plist */,
+				5B27D5EE2325AC0C00BAAAE6 /* TrackShuflerTests.swift */,
+				5B27D5FD2325C09100BAAAE6 /* PlayListWorkerTests.swift */,
+				5B27D5FF2325C10300BAAAE6 /* PlayListPresentetTests.swift */,
+				5B27D6012325C11100BAAAE6 /* PlayListInteractorTests.swift */,
+				5B27D6032325C12300BAAAE6 /* PlayListViewControllerTests.swift */,
 			);
 			path = "Shuffle SongsTests";
 			sourceTree = "<group>";
@@ -454,6 +518,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B27D5F32325AC6A00BAAAE6 /* LookupMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +540,7 @@
 				5B661CD9231F68B60039DC19 /* APIConstants.swift in Sources */,
 				5B661CD3231F656E0039DC19 /* ImageConstants.swift in Sources */,
 				5B661CCE231F64E20039DC19 /* PlayListViewController.swift in Sources */,
-				5B661CE3231F70570039DC19 /* Router.swift in Sources */,
+				5B661CE3231F70570039DC19 /* Coordinator.swift in Sources */,
 				5B27D5E623258E9800BAAAE6 /* LookUp.swift in Sources */,
 				5B661CE7231F715E0039DC19 /* APIResult.swift in Sources */,
 				5B27D5EA2325A33000BAAAE6 /* TrackShuffler.swift in Sources */,
@@ -498,6 +563,8 @@
 				5B27D5E823258F5300BAAAE6 /* PlayList.swift in Sources */,
 				5B27D5E223258E5A00BAAAE6 /* Artist.swift in Sources */,
 				5B27D5E023258E4000BAAAE6 /* LookupResponse.swift in Sources */,
+				5B27D5F82325B54200BAAAE6 /* UIImage+Extensions.swift in Sources */,
+				5B27D5FA2325B55300BAAAE6 /* String+Extensions.swift in Sources */,
 				5B661CF1231F75650039DC19 /* ImageDownloader.swift in Sources */,
 				5B661CCB231F64E20039DC19 /* PlayListWorker.swift in Sources */,
 			);
@@ -507,7 +574,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BABAF1A231F5DD900E7C116 /* Shuffle_SongsTests.swift in Sources */,
+				5B27D5FE2325C09100BAAAE6 /* PlayListWorkerTests.swift in Sources */,
+				5B27D5F52325ACC500BAAAE6 /* LookupMock.swift in Sources */,
+				5B27D6002325C10300BAAAE6 /* PlayListPresentetTests.swift in Sources */,
+				5B27D5EF2325AC0C00BAAAE6 /* TrackShuflerTests.swift in Sources */,
+				5B27D6042325C12300BAAAE6 /* PlayListViewControllerTests.swift in Sources */,
+				5B27D6022325C11100BAAAE6 /* PlayListInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

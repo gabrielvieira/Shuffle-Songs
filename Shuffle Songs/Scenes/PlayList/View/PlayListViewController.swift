@@ -14,12 +14,13 @@ protocol PlayListDisplayProtocol: class {
 
 class PlayListViewController: BaseViewController {
 
-    var interactor: PlayListInteractorProtocol?
+    var interactor: PlayListInteractorProtocol
     private let tableView = UITableView()
     private var viewModel: PlayListViewModel = PlayListViewModel(trackList: [])
     private let cellIdentifier = "PlayListTableViewCell"
     
-    init() {
+    init(interactor: PlayListInteractorProtocol) {
+        self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,7 +31,7 @@ class PlayListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        interactor?.fetchPlaylist()
+        interactor.fetchPlaylist()
         self.showLoader()
     }
     
@@ -61,12 +62,7 @@ class PlayListViewController: BaseViewController {
         
         rightBarButtonItem.tintColor = ColorConstants.white
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
-        self.navigationItem.title = NSLocalizedString("shuffle_title", comment: "")
-    }
-    
-    @objc func shuffle() {
-        
-        self.interactor?.shufflePlaylist()
+        self.navigationItem.title = "shuffle_title".localized
     }
     
     private func setupTableView() {
@@ -75,20 +71,30 @@ class PlayListViewController: BaseViewController {
         backgroundView.backgroundColor = ColorConstants.purple
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: self.cellIdentifier, bundle: nil),
-                           forCellReuseIdentifier: self.cellIdentifier)
+                                forCellReuseIdentifier: self.cellIdentifier)
         tableView.tableFooterView = UIView()
         tableView.backgroundView = backgroundView
+    }
+    
+    @objc func shuffle() {
+        
+        self.interactor.shufflePlaylist()
     }
 }
 
 extension PlayListViewController: PlayListDisplayProtocol {
     
     func displayPlaylist (viewModel: PlayListViewModel) {
-        //display items
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.viewModel = viewModel
+            self?.tableView.reloadData()
+            self?.hideLoader()
+        }
     }
     
     func displayError(message: String) {
-        let alert = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "alert".localized, message: message, preferredStyle: .alert)
         self.present(alert, animated: true)
     }
 }

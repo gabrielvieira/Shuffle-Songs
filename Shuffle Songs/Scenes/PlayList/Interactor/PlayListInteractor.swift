@@ -14,27 +14,32 @@ protocol PlayListInteractorProtocol {
 
 class PlayListInteractor: PlayListInteractorProtocol {
     
-    var presenter: PlayListPresenterProtocol?
-    var worker: PlayListWorker?
-    private var playlist: PlayList?
+    private var worker: PlayListWorkerProtocol
+    private var presenter: PlayListPresenterProtocol
     private let trackShuffler: TrackShufflerProtocol
+    private var playlist: PlayList?
     
-    init(trackShuffler: TrackShufflerProtocol = TrackShuffler()) {
+    init(presenter: PlayListPresenterProtocol,
+         worker: PlayListWorkerProtocol = PlayListWorker(),
+         trackShuffler: TrackShufflerProtocol = TrackShuffler()) {
+        
+        self.presenter = presenter
         self.trackShuffler = trackShuffler
+        self.worker = worker
     }
     
     func fetchPlaylist() {
         
-        self.worker?.fetchPlayList(completion: { result in
+        self.worker.fetchPlayList(completion: { result in
             
             switch result {
                 
             case let .success(playlist):
                 self.playlist = playlist
-                self.presenter?.presentPlaylist(playList: playlist)
+                self.presenter.presentPlaylist(playList: playlist)
                 
             case let .failure(error):
-                self.presenter?.presentError(error: error)
+                self.presenter.presentError(error: error)
             }
         })
     }
@@ -48,6 +53,6 @@ class PlayListInteractor: PlayListInteractorProtocol {
         let shuffledPlauList = PlayList(artists: currentPlayList.artists,
                                         tracks: self.trackShuffler.shufle(tracks: currentPlayList.tracks))
         
-        self.presenter?.presentPlaylist(playList: shuffledPlauList)
+        self.presenter.presentPlaylist(playList: shuffledPlauList)
     }
 }

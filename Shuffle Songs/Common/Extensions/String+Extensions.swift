@@ -1,5 +1,5 @@
 //
-//  TrackViewModel.swift
+//  String+Extensions.swift
 //  Shuffle Songs
 //
 //  Created by Gabriel Tomaz on 08/09/19.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct TrackViewModel {
- 
-    let name: String
-    let artistName: String
-    let artwork: URL
+extension String {
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
 }
+

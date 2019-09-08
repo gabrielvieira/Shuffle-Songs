@@ -11,4 +11,5 @@ import Foundation
 struct ImageConstants {
     
     static let shuffleIcon: String = "shuffle_icon"
+    static let placeholderIcon: String = "placeholder_icon"
 }

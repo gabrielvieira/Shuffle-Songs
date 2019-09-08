@@ -43,12 +43,11 @@ class TrackShuffler: TrackShufflerProtocol {
         //generate result list
         for i in 0 ..< maxLenght {
             for key in keys {
-                if let tracks = dic[key], tracks.count < i {
-                    result.append(tracks[i])
+                if let trackList = dic[key], i < trackList.count {
+                    result.append(trackList[i])
                 }
             }
         }
-        
         return result
     }
 }

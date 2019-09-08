@@ -25,25 +25,22 @@ class Coordinator: CoordinatorProtocol {
     let navigationController: UINavigationController
     
     func start() {
-//        let presenter = PlaylistPresenter()
-//        let manager = PlaylistProvider()
-//        let interactor = PlaylistInteractor(presenter: presenter, manager: manager)
-//        let playlistViewContoller = PlaylistViewController(interactor: interactor)
         
-        let controller = PlayListViewController()
-        let interactor = PlayListInteractor()
+        let worker = PlayListWorker()
         let presenter = PlayListPresenter()
-        controller.interactor = interactor
-        interactor.presenter = presenter
+        let interactor = PlayListInteractor(presenter: presenter, worker: worker)
+        let controller = PlayListViewController(interactor: interactor)
         presenter.viewController = controller
-//        presenter.viewController = playlistViewContoller
         navigationController.pushViewController(controller, animated: false)
     }
     
     init(navigationController: UINavigationController) {
+        
         self.navigationController = navigationController
         navigationController.navigationBar.barStyle = .blackOpaque
         navigationController.navigationBar.tintColor = ColorConstants.lightPurple
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.barTintColor = ColorConstants.lightPurple
         navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ColorConstants.white]
     }
 }

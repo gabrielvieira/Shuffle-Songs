@@ -23,10 +23,12 @@ class PlayListTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        self.setSelected(false, animated: false)
     }
     
     public func setup(_ viewModel: TrackViewModel) {
         
+        self.trackNameLabel.text = viewModel.name
+        self.artistNameLabel.text = viewModel.artistName
+        self.artWorkImageView.loadImage(from: viewModel.artwork)
     }
 }
