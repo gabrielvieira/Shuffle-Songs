@@ -7,27 +7,48 @@
 //
 
 import XCTest
+@testable import Shuffle_Songs
 
 class PlayListViewControllerTests: XCTestCase {
-
+    
+    var sut: PlayListViewController!
+    var interactorSpy: PlayListInteractorSpy!
+    var tableViewSpy: TableViewSpy!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        interactorSpy = PlayListInteractorSpy()
+        tableViewSpy = TableViewSpy()
+        sut = PlayListViewController(interactor: interactorSpy, tableView: tableViewSpy)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_shoud_fetch_playlist_when_view_did_load() {
+        sut.viewDidLoad()
+        XCTAssert(interactorSpy.fetchPlayListCalled)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_number_of_sections_in_table_view_should_be_one() {
+        let numberOfSections = tableViewSpy.numberOfSections
+        // Then
+        XCTAssertEqual(numberOfSections, 1)
     }
+    
+    func test_number_of_rows_shoud_be_equal_to_view_model() {
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let expectedNumberOfRows = 1
+        let viewModel = PlayListViewModel(trackList: [TrackViewModel(name: "trackname", artistName: "name", artwork: URL(string: "https://firebase.com")!)])
+        sut.displayPlaylist(viewModel: viewModel)
+ 
+        DispatchQueue.main.async() {
+            XCTAssert(expectedNumberOfRows == viewModel.trackList.count)
         }
     }
-
+    
+    func test_should_call_reload_data_after_fetch_playlist() {
+        
+        let viewModel = PlayListViewModel(trackList: [TrackViewModel(name: "trackname", artistName: "name", artwork: URL(string: "https://firebase.com")!)])
+        sut.displayPlaylist(viewModel: viewModel)
+        DispatchQueue.main.async() {
+            XCTAssert(self.tableViewSpy.reloadDataCalled)
+        }
+    }
 }

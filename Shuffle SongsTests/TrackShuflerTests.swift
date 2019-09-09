@@ -22,16 +22,15 @@ class TrackShuflerTests: XCTestCase {
 
     func test_shuffle_not_return_empty_result() {
         
-        let mockResponse = lookupMock.getSuccess()
+        let mockResponse = lookupMock.getLookUpResponse()
         let playList = worker.createPlayList(result: mockResponse.result)
         let shuffledList = shuffler.shufle(tracks: playList.tracks)
-        
         XCTAssert(shuffledList.count > 0)
     }
     
     func test_shuffle_return_balanced_result() {
         
-        let mockResponse = lookupMock.getSuccess()
+        let mockResponse = lookupMock.getLookUpResponse()
         let playList = worker.createPlayList(result: mockResponse.result)
         let shuffledList = shuffler.shufle(tracks: playList.tracks)
         

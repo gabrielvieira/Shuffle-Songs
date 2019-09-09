@@ -16,6 +16,9 @@ class TrackShuffler: TrackShufflerProtocol {
     
     func shufle(tracks: [Track]) -> [Track] {
         
+        if tracks.count == 0 {
+            return []
+        }
         //shuffle track
         var dic =  [Int : [Track]]()
         let shuffledList = tracks.shuffled()

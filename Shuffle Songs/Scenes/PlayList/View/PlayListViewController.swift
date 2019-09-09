@@ -15,12 +15,13 @@ protocol PlayListDisplayProtocol: class {
 class PlayListViewController: BaseViewController {
 
     var interactor: PlayListInteractorProtocol
-    private let tableView = UITableView()
+    let tableView: UITableView
     private var viewModel: PlayListViewModel = PlayListViewModel(trackList: [])
     private let cellIdentifier = "PlayListTableViewCell"
     
-    init(interactor: PlayListInteractorProtocol) {
+    init(interactor: PlayListInteractorProtocol, tableView: UITableView = UITableView()) {
         self.interactor = interactor
+        self.tableView = tableView
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -86,8 +87,9 @@ extension PlayListViewController: PlayListDisplayProtocol {
     
     func displayPlaylist (viewModel: PlayListViewModel) {
         
+        self.viewModel = viewModel
+        
         DispatchQueue.main.async { [weak self] in
-            self?.viewModel = viewModel
             self?.tableView.reloadData()
             self?.hideLoader()
         }
@@ -117,7 +119,6 @@ extension PlayListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return self.viewModel.trackList.count
     }
 }

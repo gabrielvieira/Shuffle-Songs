@@ -29,9 +29,11 @@ struct Track: Decodable {
     }
 }
 
-
 extension Track: Equatable {
     public static func ==(lhs: Track, rhs: Track) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.id == rhs.id &&
+            lhs.name == rhs.name &&
+            lhs.artistName == rhs.artistName &&
+            lhs.primaryGenreName == rhs.primaryGenreName
     }
 }

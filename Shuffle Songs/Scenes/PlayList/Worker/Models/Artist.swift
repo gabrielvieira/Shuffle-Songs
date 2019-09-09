@@ -22,3 +22,10 @@ struct Artist: Decodable {
         case primaryGenreName
     }
 }
+
+extension Artist: Equatable {
+    public static func ==(lhs: Artist, rhs: Artist) -> Bool {
+        return lhs.id == rhs.id &&
+            lhs.name == rhs.name
+    }
+}

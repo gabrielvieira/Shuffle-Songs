@@ -26,6 +26,11 @@
 		5B27D6002325C10300BAAAE6 /* PlayListPresentetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D5FF2325C10300BAAAE6 /* PlayListPresentetTests.swift */; };
 		5B27D6022325C11100BAAAE6 /* PlayListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D6012325C11100BAAAE6 /* PlayListInteractorTests.swift */; };
 		5B27D6042325C12300BAAAE6 /* PlayListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D6032325C12300BAAAE6 /* PlayListViewControllerTests.swift */; };
+		5B27D6082325C76000BAAAE6 /* PlayListInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D6072325C76000BAAAE6 /* PlayListInteractorSpy.swift */; };
+		5B27D60A2325C8AB00BAAAE6 /* PlayListViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D6092325C8AB00BAAAE6 /* PlayListViewControllerSpy.swift */; };
+		5B27D60C2325CAAE00BAAAE6 /* TableViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D60B2325CAAE00BAAAE6 /* TableViewSpy.swift */; };
+		5B27D60E2325D32000BAAAE6 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D60D2325D32000BAAAE6 /* APIClientMock.swift */; };
+		5B27D6112325ED1500BAAAE6 /* PlayListPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D6102325ED1500BAAAE6 /* PlayListPresenterSpy.swift */; };
 		5B4381D02320B8BF00C039E5 /* PlayListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4381CF2320B8BF00C039E5 /* PlayListRequest.swift */; };
 		5B661CCA231F64E20039DC19 /* PlayListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CC4231F64E20039DC19 /* PlayListPresenter.swift */; };
 		5B661CCB231F64E20039DC19 /* PlayListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661CC5231F64E20039DC19 /* PlayListWorker.swift */; };
@@ -89,6 +94,11 @@
 		5B27D5FF2325C10300BAAAE6 /* PlayListPresentetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListPresentetTests.swift; sourceTree = "<group>"; };
 		5B27D6012325C11100BAAAE6 /* PlayListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListInteractorTests.swift; sourceTree = "<group>"; };
 		5B27D6032325C12300BAAAE6 /* PlayListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListViewControllerTests.swift; sourceTree = "<group>"; };
+		5B27D6072325C76000BAAAE6 /* PlayListInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListInteractorSpy.swift; sourceTree = "<group>"; };
+		5B27D6092325C8AB00BAAAE6 /* PlayListViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListViewControllerSpy.swift; sourceTree = "<group>"; };
+		5B27D60B2325CAAE00BAAAE6 /* TableViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSpy.swift; sourceTree = "<group>"; };
+		5B27D60D2325D32000BAAAE6 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
+		5B27D6102325ED1500BAAAE6 /* PlayListPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListPresenterSpy.swift; sourceTree = "<group>"; };
 		5B4381CF2320B8BF00C039E5 /* PlayListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListRequest.swift; sourceTree = "<group>"; };
 		5B661CC4231F64E20039DC19 /* PlayListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListPresenter.swift; sourceTree = "<group>"; };
 		5B661CC5231F64E20039DC19 /* PlayListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListWorker.swift; sourceTree = "<group>"; };
@@ -170,7 +180,8 @@
 		5B27D5F02325AC1600BAAAE6 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				5B27D5F42325ACC500BAAAE6 /* LookupMock.swift */,
+				5B27D6122325ED1900BAAAE6 /* Spy */,
+				5B27D60F2325DA6400BAAAE6 /* API */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -206,6 +217,26 @@
 				5B661CC9231F64E20039DC19 /* PlayListInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5B27D60F2325DA6400BAAAE6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5B27D5F42325ACC500BAAAE6 /* LookupMock.swift */,
+				5B27D60D2325D32000BAAAE6 /* APIClientMock.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5B27D6122325ED1900BAAAE6 /* Spy */ = {
+			isa = PBXGroup;
+			children = (
+				5B27D6072325C76000BAAAE6 /* PlayListInteractorSpy.swift */,
+				5B27D6092325C8AB00BAAAE6 /* PlayListViewControllerSpy.swift */,
+				5B27D60B2325CAAE00BAAAE6 /* TableViewSpy.swift */,
+				5B27D6102325ED1500BAAAE6 /* PlayListPresenterSpy.swift */,
+			);
+			path = Spy;
 			sourceTree = "<group>";
 		};
 		5B4381CE2320B89E00C039E5 /* Worker */ = {
@@ -362,14 +393,14 @@
 		5BABAF18231F5DD900E7C116 /* Shuffle SongsTests */ = {
 			isa = PBXGroup;
 			children = (
+				5BABAF1B231F5DD900E7C116 /* Info.plist */,
 				5B27D5F12325AC2300BAAAE6 /* Resources */,
 				5B27D5F02325AC1600BAAAE6 /* Mock */,
-				5BABAF1B231F5DD900E7C116 /* Info.plist */,
+				5B27D6032325C12300BAAAE6 /* PlayListViewControllerTests.swift */,
 				5B27D5EE2325AC0C00BAAAE6 /* TrackShuflerTests.swift */,
 				5B27D5FD2325C09100BAAAE6 /* PlayListWorkerTests.swift */,
 				5B27D5FF2325C10300BAAAE6 /* PlayListPresentetTests.swift */,
 				5B27D6012325C11100BAAAE6 /* PlayListInteractorTests.swift */,
-				5B27D6032325C12300BAAAE6 /* PlayListViewControllerTests.swift */,
 			);
 			path = "Shuffle SongsTests";
 			sourceTree = "<group>";
@@ -574,12 +605,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B27D60A2325C8AB00BAAAE6 /* PlayListViewControllerSpy.swift in Sources */,
 				5B27D5FE2325C09100BAAAE6 /* PlayListWorkerTests.swift in Sources */,
 				5B27D5F52325ACC500BAAAE6 /* LookupMock.swift in Sources */,
 				5B27D6002325C10300BAAAE6 /* PlayListPresentetTests.swift in Sources */,
+				5B27D60C2325CAAE00BAAAE6 /* TableViewSpy.swift in Sources */,
 				5B27D5EF2325AC0C00BAAAE6 /* TrackShuflerTests.swift in Sources */,
 				5B27D6042325C12300BAAAE6 /* PlayListViewControllerTests.swift in Sources */,
+				5B27D6082325C76000BAAAE6 /* PlayListInteractorSpy.swift in Sources */,
 				5B27D6022325C11100BAAAE6 /* PlayListInteractorTests.swift in Sources */,
+				5B27D6112325ED1500BAAAE6 /* PlayListPresenterSpy.swift in Sources */,
+				5B27D60E2325D32000BAAAE6 /* APIClientMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,3 +14,11 @@ struct TrackViewModel {
     let artistName: String
     let artwork: URL
 }
+
+extension TrackViewModel: Equatable {
+    public static func ==(lhs: TrackViewModel, rhs: TrackViewModel) -> Bool {
+        return lhs.artistName == rhs.artistName &&
+            lhs.artwork == rhs.artwork &&
+            lhs.name == rhs.name
+    }
+}
