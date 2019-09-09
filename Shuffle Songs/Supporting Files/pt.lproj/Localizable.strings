@@ -9,3 +9,5 @@
 "alert" = "Alerta";
 "ok" = "OK";
 "shuffle_title" = "Shuffle Songs";
+"retry" = "Tentar novamente";
+"cancel" = "Cancelar";

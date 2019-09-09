@@ -12,6 +12,7 @@ class BaseViewController: UIViewController {
     
     private var loaderView: UIView = UIView()
     private let loader: UIActivityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
+    var isLoading = false
     
     override func viewDidLoad() {
         
@@ -23,6 +24,7 @@ class BaseViewController: UIViewController {
     
     func showLoader() {
         
+        self.isLoading = true
         self.loaderView.frame = UIScreen.main.bounds
         self.loader.center = self.loaderView.center
         
@@ -33,7 +35,8 @@ class BaseViewController: UIViewController {
     }
    
     func hideLoader() {
-        
+
+        self.isLoading = false
         DispatchQueue.main.async {
             self.loader.stopAnimating()
             self.loaderView.removeFromSuperview()

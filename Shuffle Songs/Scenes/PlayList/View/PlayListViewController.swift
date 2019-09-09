@@ -32,7 +32,7 @@ class PlayListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        interactor.fetchPlaylist()
+        self.fetchPlayList()
         self.showLoader()
     }
     
@@ -77,8 +77,16 @@ class PlayListViewController: BaseViewController {
         tableView.backgroundView = backgroundView
     }
     
+    private func fetchPlayList() {
+        self.showLoader()
+        interactor.fetchPlaylist()
+    }
+    
     @objc func shuffle() {
         
+        if self.isLoading {
+            return
+        }
         self.interactor.shufflePlaylist()
     }
 }
@@ -96,8 +104,16 @@ extension PlayListViewController: PlayListDisplayProtocol {
     }
     
     func displayError(message: String) {
-        let alert = UIAlertController(title: "alert".localized, message: message, preferredStyle: .alert)
-        self.present(alert, animated: true)
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.hideLoader()
+            let alert = UIAlertController(title: "alert".localized, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "cancel".localized, style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "retry".localized, style: .default, handler: { _ in
+                self?.interactor.fetchPlaylist()
+            }))
+            self?.present(alert, animated: true)
+        }
     }
 }
 
