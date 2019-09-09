@@ -15,10 +15,10 @@ class PlayListPresenterSpy: PlayListPresenterProtocol {
     var presentErrorCalled = false
     
     func presentPlaylist(playList: PlayList) {
-        
+        presentPlayListCalled = true
     }
     
     func presentError(error: Error) {
-        
+        presentErrorCalled = true
     }
 }

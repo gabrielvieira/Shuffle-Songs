@@ -55,6 +55,7 @@
 		5BABAF25231F5DD900E7C116 /* Shuffle_SongsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABAF24231F5DD900E7C116 /* Shuffle_SongsUITests.swift */; };
 		5BF501D72320BB7D00D1C9EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BF501D92320BB7D00D1C9EB /* Localizable.strings */; };
 		5BF501DC2320C17900D1C9EB /* APIUrlRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF501DB2320C17900D1C9EB /* APIUrlRequestBuilder.swift */; };
+		5BFF1F112325F2B00081FAAB /* PlayListWorkerSky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF1F102325F2B00081FAAB /* PlayListWorkerSky.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		5BF501D82320BB7D00D1C9EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BF501DA2320BBC400D1C9EB /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BF501DB2320C17900D1C9EB /* APIUrlRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrlRequestBuilder.swift; sourceTree = "<group>"; };
+		5BFF1F102325F2B00081FAAB /* PlayListWorkerSky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListWorkerSky.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,15 +177,6 @@
 				5B27D5E92325A33000BAAAE6 /* TrackShuffler.swift */,
 			);
 			path = TrackShuffler;
-			sourceTree = "<group>";
-		};
-		5B27D5F02325AC1600BAAAE6 /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				5B27D6122325ED1900BAAAE6 /* Spy */,
-				5B27D60F2325DA6400BAAAE6 /* API */,
-			);
-			path = Mock;
 			sourceTree = "<group>";
 		};
 		5B27D5F12325AC2300BAAAE6 /* Resources */ = {
@@ -235,6 +228,7 @@
 				5B27D6092325C8AB00BAAAE6 /* PlayListViewControllerSpy.swift */,
 				5B27D60B2325CAAE00BAAAE6 /* TableViewSpy.swift */,
 				5B27D6102325ED1500BAAAE6 /* PlayListPresenterSpy.swift */,
+				5BFF1F102325F2B00081FAAB /* PlayListWorkerSky.swift */,
 			);
 			path = Spy;
 			sourceTree = "<group>";
@@ -393,14 +387,9 @@
 		5BABAF18231F5DD900E7C116 /* Shuffle SongsTests */ = {
 			isa = PBXGroup;
 			children = (
+				5BFF1F122325F44A0081FAAB /* Playlist */,
 				5BABAF1B231F5DD900E7C116 /* Info.plist */,
 				5B27D5F12325AC2300BAAAE6 /* Resources */,
-				5B27D5F02325AC1600BAAAE6 /* Mock */,
-				5B27D6032325C12300BAAAE6 /* PlayListViewControllerTests.swift */,
-				5B27D5EE2325AC0C00BAAAE6 /* TrackShuflerTests.swift */,
-				5B27D5FD2325C09100BAAAE6 /* PlayListWorkerTests.swift */,
-				5B27D5FF2325C10300BAAAE6 /* PlayListPresentetTests.swift */,
-				5B27D6012325C11100BAAAE6 /* PlayListInteractorTests.swift */,
 			);
 			path = "Shuffle SongsTests";
 			sourceTree = "<group>";
@@ -431,6 +420,20 @@
 				5B27D5D82325767300BAAAE6 /* TrackViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5BFF1F122325F44A0081FAAB /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				5B27D6122325ED1900BAAAE6 /* Spy */,
+				5B27D60F2325DA6400BAAAE6 /* API */,
+				5B27D6032325C12300BAAAE6 /* PlayListViewControllerTests.swift */,
+				5B27D5EE2325AC0C00BAAAE6 /* TrackShuflerTests.swift */,
+				5B27D5FD2325C09100BAAAE6 /* PlayListWorkerTests.swift */,
+				5B27D5FF2325C10300BAAAE6 /* PlayListPresentetTests.swift */,
+				5B27D6012325C11100BAAAE6 /* PlayListInteractorTests.swift */,
+			);
+			path = Playlist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -606,6 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B27D60A2325C8AB00BAAAE6 /* PlayListViewControllerSpy.swift in Sources */,
+				5BFF1F112325F2B00081FAAB /* PlayListWorkerSky.swift in Sources */,
 				5B27D5FE2325C09100BAAAE6 /* PlayListWorkerTests.swift in Sources */,
 				5B27D5F52325ACC500BAAAE6 /* LookupMock.swift in Sources */,
 				5B27D6002325C10300BAAAE6 /* PlayListPresentetTests.swift in Sources */,

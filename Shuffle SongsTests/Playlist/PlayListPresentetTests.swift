@@ -39,8 +39,6 @@ class PlayListPresentetTests: XCTestCase {
         
         XCTAssert(viewControllerSpy.displayedViewModel?.trackList.count == trackCount)
         XCTAssert(viewControllerSpy.displayPlayListCalled)
-        
-//            Track(id: 579273550, artistId: 1171421960, name: "Bomb Secrets", artistName: "Charlie and the Chewie Humans", wrapperType: "track", artwork: URL(string: "https://firebasestorage.googleapis.com")!, primaryGenreName: "Metal"),
     }
     
     func test_display_error_called_when_receive_error() {
